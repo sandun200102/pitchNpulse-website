@@ -18,7 +18,7 @@ export default function WhatsAppButton() {
       href={webUrl} // wa.me is safest as a default; most mobile browsers auto-redirect to the app
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-[100] flex flex-col items-center group"
+      className="fixed bottom-1 right-6 z-[100] flex flex-col items-center group"
     >
       {/* Dynamic Label */}
       <span className="mb-2 bg-white text-[#075E54] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-stone-100 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">

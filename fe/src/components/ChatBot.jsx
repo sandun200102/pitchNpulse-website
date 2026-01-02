@@ -66,7 +66,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-10 right-30 z-[100]">
+    <div className="fixed bottom-2 right-28 z-[100]">
       {/* Toggle Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}

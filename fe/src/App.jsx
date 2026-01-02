@@ -56,7 +56,7 @@ function App() {
                     🎶 Now enrolling for 2026 Semester
                   </div>
                   
-                  <h1 className="text-4xl md:text-6xl font-serif font-bold text-stone-900 leading-[1.1] mb-6 drop-shadow-sm">
+                  <h1 className="text-4xl md:text-6xl font-serif font-bold text-stone-900 leading-[1.1] mb-1 drop-shadow-sm">
                     Master the Art of <br />
                     <span className="italic text-amber-600">Musical Expression</span>
                   </h1>

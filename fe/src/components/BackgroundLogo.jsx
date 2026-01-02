@@ -7,7 +7,7 @@ const BackgroundLogo = () => {
       <img 
         src="/musician.png" 
         alt="Pitch and Pulse Background" 
-        className="absolute left-[-12%] top-1/4 w-[500px] md:w-[800px] opacity-[0.8]  brightness-150 rotate-[-10deg] top-1.5"
+        className="absolute left-[-12%] top-1/4 w-[500px] md:w-[800px] opacity-[0.8]  brightness-150 rotate-[-10deg] top-0"
         onError={(e) => console.error("Logo image failed to load. Check if Music-logo.jpeg is in the public folder.")}
       />
     </div>
