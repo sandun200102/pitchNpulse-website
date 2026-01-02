@@ -10,7 +10,7 @@ export default function SocialCard({ icon: Icon, label, sub, iconColor, hoverBg,
       <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${hoverBg}`} />
       
       {/* Icon Container */}
-      <div className="relative z-10 p-5 rounded-2xl mb-4 bg-stone-50 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-inner">
+      <div className="relative z-10 p-5 rounded-2xl mb-4 bg-stone-200 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-inner">
         {/* Actual Brand Color applied to the Icon */}
         <Icon size={36} className={`${iconColor} transition-all duration-500`} />
       </div>

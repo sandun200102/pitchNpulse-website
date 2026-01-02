@@ -29,21 +29,30 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-black/90 border-b border-orange-500/20 px-6 py-3 text-white">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      {/* Main Container */}
+      <div className="max-w-7xl mx-auto flex justify-between items-center relative min-h-[50px]">
         
-        {/* BRANDING SECTION */}
-        <Link to="/" className="flex items-center gap-3 group cursor-pointer">
+        {/* BRANDING SECTION 
+            Mobile: Absolute centered using left-1/2 and transform
+            Desktop: Static positioning with ml-5 (20px)
+        */}
+        <Link 
+          to="/" 
+          className="flex items-center gap-3 group cursor-pointer 
+                     absolute left-1/2 -translate-x-1/2 
+                     md:static md:translate-x-0 md:ml-65 z-20"
+        >
           <div className="relative">
             <img 
-              src="/Music-logo.jpeg" 
+              src="/Music-logo.png" 
               alt="Logo" 
-              className="h-12 w-12 rounded-full border border-orange-400/30 object-cover group-hover:scale-110 transition-transform duration-500" 
+              className="h-10 w-10 md:h-12 md:w-12 md:hidden rounded-full border border-orange-400/30 object-cover group-hover:scale-110 transition-transform duration-500" 
             />
             <div className="absolute inset-0 rounded-full bg-orange-500/20 blur-sm group-hover:blur-md transition-all"></div>
           </div>
           
           <div className="flex flex-col text-left">
-            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-tight leading-none">
+            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-tight leading-none whitespace-nowrap">
               Pitch & <span className="text-orange-500">Pulse</span>
             </h1>
             <span className="text-[9px] md:text-[10px] tracking-[0.4em] font-black text-stone-400 uppercase">
@@ -82,10 +91,11 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* MOBILE TOGGLE */}
+        {/* MOBILE TOGGLE (Right-aligned) */}
         <button 
-          className="md:hidden text-orange-500 p-2" 
+          className="md:hidden text-orange-500 p-2 z-30 ml-auto" 
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
         >
           {isOpen ? <HiX size={32} /> : <HiMenuAlt3 size={32} />}
         </button>
@@ -99,7 +109,7 @@ export default function Navbar() {
 
       {/* MOBILE MENU OVERLAY */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-b border-orange-500/30 p-8 flex flex-col gap-6 md:hidden">
+        <div className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-b border-orange-500/30 p-8 flex flex-col gap-6 md:hidden animate-in fade-in slide-in-from-top-5 duration-300">
           {navLinks.map((link) => (
             link.isHash ? (
               <HashLink 
@@ -123,7 +133,6 @@ export default function Navbar() {
             )
           ))}
           
-          {/* Mobile View Classes Button */}
           <div className="pt-4 border-t border-white/10">
             <Link to="/classes" onClick={() => setIsOpen(false)}>
               <button className="w-full bg-gradient-to-r from-orange-600 to-amber-500 text-white px-7 py-4 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-all">

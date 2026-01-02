@@ -1,14 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const BackgroundLogo = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check window width to toggle positioning
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    
+    // Set initial value and add listener
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const containerStyle = {
+    position: 'fixed',
+    inset: 0,
+    pointerEvents: 'none',
+    zIndex: 0,
+    overflow: 'hidden'
+  };
+
+  const imageStyle = {
+    position: 'absolute',
+    opacity: 0.8,
+    filter: 'brightness(1.5)',
+    transition: 'all 0.3s ease', // Smooth movement between views
+    // Responsive Logic:
+    top: isMobile ? '2%' : '25%',
+    left: isMobile ? '50%' : '-12%',
+    transform: isMobile ? 'translateX(-50%) rotate(0deg)' : 'rotate(0deg)',
+    width: isMobile ? '300px' : '800px',
+  };
+
   return (
-    // We use z-0 and ensure the parent has a background to prevent the logo from vanishing
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div style={containerStyle}>
       <img 
         src="/musician.png" 
         alt="Pitch and Pulse Background" 
-        className="absolute left-[-12%] top-1/4 w-[500px] md:w-[800px] opacity-[0.8]  brightness-150 rotate-[-10deg] top-0"
-        onError={(e) => console.error("Logo image failed to load. Check if Music-logo.jpeg is in the public folder.")}
+        style={imageStyle}
+        onError={(e) => console.error("Logo image failed to load.")}
       />
     </div>
   );

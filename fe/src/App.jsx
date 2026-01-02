@@ -24,6 +24,7 @@ import Guitar from './pages/Guitar';
 import Vocal from './pages/Vocal';
 import Violin from './pages/Violin';
 import ChatBot from './components/ChatBot';
+import CornerLogo from './components/CornerLogo';
 
 function App() {
   const [showVideo, setShowVideo] = useState(false);
@@ -32,6 +33,7 @@ function App() {
     <div className="relative bg-stone-50 min-h-screen font-sans selection:bg-amber-200 overflow-x-hidden">
       
       {/* LAYER 1: Background Elements (Persistent) */}
+      <CornerLogo />
       <BackgroundLogo />
       <MusicFlying />
 
@@ -44,10 +46,10 @@ function App() {
             {/* HOME PAGE */}
             <Route path="/" element={
               <>
-                {/* IMPORTANT: 'relative' class here ensures the Slider 
-                   stays pinned to this specific header while scrolling.
+                {/* MOBILE PADDING: 'pt-80' pushes text down to make room for the logo at the top.
+                   DESKTOP PADDING: 'md:pt-10' restores the original spacing.
                 */}
-                <header className="relative px-6 pt-2 pb-24 max-w-7xl mx-auto text-center">
+                <header className="relative px-6 pt-36 md:pt-10 pb-24 max-w-7xl mx-auto text-center">
                   
                   {/* ADS ONLY ON HOME & MOVES WITH SCROLL */}
                   <SideAdSlider />
@@ -62,7 +64,7 @@ function App() {
                   </h1>
 
                   {/* PREMIUM SIGNATURE SECTION */}
-                  <div className="flex justify-center my-1">
+                  <div className="flex justify-center my-8">
                     <div className="relative inline-flex flex-col items-center">
                       <div className="relative leading-tight px-2">
                         <span className="text-lg md:text-3xl font-bold uppercase tracking-[0.25em] bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#aa771c] bg-[length:200%_auto] bg-clip-text text-transparent animate-gold-run drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)]">
@@ -121,10 +123,10 @@ function App() {
                       <p className="text-stone-400 mt-2 font-medium">Get free daily tips and student performance updates</p>
                     </div>
                     
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto">                      <SocialCard icon={FaInstagram} label="Instagram" sub="Quick Tips" iconColor="text-[#E4405F]" hoverBg="bg-[#E4405F]" link="https://instagram.com" />
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                      <SocialCard icon={FaInstagram} label="Instagram" sub="Quick Tips" iconColor="text-[#E4405F]" hoverBg="bg-[#E4405F]" link="https://instagram.com" />
                       <SocialCard icon={FaYoutube} label="YouTube" sub="Full Lessons" iconColor="text-[#FF0000]" hoverBg="bg-[#FF0000]" link="https://youtube.com" />
-                      <SocialCard  icon={FaTiktok} label="TikTok" sub="Short Clips" iconColor="text-[#000000]" hoverBg="bg-[#000000]" link="https://tiktok.com" 
-      />
+                      <SocialCard icon={FaTiktok} label="TikTok" sub="Short Clips" iconColor="text-[#000000]" hoverBg="bg-[#000000]" link="https://tiktok.com" />
                       <SocialCard icon={FaFacebookF} label="Facebook" sub="Community" iconColor="text-[#1877F2]" hoverBg="bg-[#1877F2]" link="https://facebook.com" />
                     </div>
                   </div>
