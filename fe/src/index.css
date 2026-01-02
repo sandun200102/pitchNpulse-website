@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Custom Musical Animations */
+@theme {
+  --animate-fly-up: fly-up 7s linear forwards;
+
+  @keyframes fly-up {
+    0% { 
+      transform: translateY(0) rotate(0deg); 
+      opacity: 0; 
+    }
+    10% { 
+      opacity: 1; 
+    }
+    90% { 
+      opacity: 1; 
+    }
+    100% { 
+      transform: translateY(-120vh) rotate(360deg); 
+      opacity: 0; 
+    }
+  }
+}/* index.css */
+html {
+  scroll-behavior: smooth;
+  /* Adjust this value based on your Navbar height */
+  scroll-padding-top: 5rem; 
+}
+
+/* Hide scrollbar for the Testimonials slider while keeping it functional */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+@keyframes gold-run {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-gold-run {
+  /* 4s makes it a slow, elegant sweep. Change to 2s for a faster flash. */
+  animation: gold-run 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
