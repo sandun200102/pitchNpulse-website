@@ -23,7 +23,7 @@ import Tabla from './pages/Tabla';
 import Guitar from './pages/Guitar';
 import Vocal from './pages/Vocal';
 import Violin from './pages/Violin';
-import ChatBot from './components/Chatbot';
+import ChatBot from './components/ChatBot';
 
 function App() {
   const [showVideo, setShowVideo] = useState(false);
