@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaPaperPlane, FaRobot, FaTimes, FaCommentDots } from 'react-icons/fa';
 
-// NOTE: Removed dotenv imports. 
-// In React, environment variables are handled automatically by the build tool.
-
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
@@ -13,10 +10,6 @@ const ChatBot = () => {
   ]);
   
   const scrollRef = useRef(null);
-
-  // CONFIGURATION: 
-  // If using Vite: import.meta.env.VITE_BACKEND_URL
-  // If using Create React App: process.env.REACT_APP_BACKEND_URL
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
 
   useEffect(() => {
@@ -31,7 +24,7 @@ const ChatBot = () => {
 
     const userMsg = { id: Date.now(), text: input, sender: 'user' };
     setMessages(prev => [...prev, userMsg]);
-    const currentInput = input; // Capture input before clearing
+    const currentInput = input;
     setInput('');
     setIsLoading(true);
 
@@ -42,22 +35,18 @@ const ChatBot = () => {
         body: JSON.stringify({ message: currentInput }),
       });
 
-      if (!response.ok) {
-        throw new Error('Server returned an error');
-      }
+      if (!response.ok) throw new Error('Server returned an error');
 
       const data = await response.json();
-      
       setMessages(prev => [...prev, { 
         id: Date.now() + 1, 
         text: data.reply || "I'm sorry, I couldn't process that.", 
         sender: 'bot' 
       }]);
     } catch (error) {
-      console.error("Chat Error:", error);
       setMessages(prev => [...prev, { 
         id: Date.now() + 1, 
-        text: "Connection error. Is the server running at " + BACKEND_URL + "?", 
+        text: "Connection error. Is the server running?", 
         sender: 'bot' 
       }]);
     } finally {
@@ -66,28 +55,40 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-1 right-25 z-[100]">
+    <div className="fixed bottom-1 right-22 md:right-22 z-[100]">
       {/* Toggle Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-blue-900 text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-amber-600 transition-all active:scale-95"
+        className="w-14 h-14 bg-blue-900 text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-amber-600 transition-all active:scale-95 z-50 relative"
       >
         {isOpen ? <FaTimes size={24} /> : <FaCommentDots size={24} />}
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="absolute bottom-16 right-0 w-[350px] h-[500px] bg-white rounded-2xl shadow-2xl border border-stone-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
+        <div className="
+          /* Mobile: Center Screen */
+          fixed inset-0 m-auto w-[90%] h-[500px] 
+          /* Desktop: Bottom Right */
+          md:absolute md:inset-auto md:bottom-20 md:right-0 md:w-[350px] 
+          bg-white rounded-2xl shadow-2xl border border-stone-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300 z-40"
+        >
           
           {/* Header */}
-          <div className="bg-stone-900 p-4 text-white flex items-center gap-3">
-            <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center shadow-inner">
-              <FaRobot size={20} />
+          <div className="bg-stone-900 p-4 text-white flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center shadow-inner">
+                <FaRobot size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold text-sm">Pulse Assistant</h4>
+                <p className="text-[10px] text-amber-200 uppercase tracking-widest">AI Expert</p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-sm">Pulse Assistant</h4>
-              <p className="text-[10px] text-amber-200 uppercase tracking-widest">AI Expert</p>
-            </div>
+            {/* Mobile-only close text/button inside header if desired */}
+            <button onClick={() => setIsOpen(false)} className="md:hidden text-stone-400 hover:text-white">
+               <FaTimes size={20} />
+            </button>
           </div>
 
           {/* Chat Body */}
@@ -103,7 +104,6 @@ const ChatBot = () => {
                 </div>
               </div>
             ))}
-            
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-white p-3 rounded-2xl border border-stone-200 animate-pulse text-stone-400 text-xs">
@@ -131,6 +131,14 @@ const ChatBot = () => {
             </button>
           </form>
         </div>
+      )}
+
+      {/* Mobile Overlay Background (Optional - darkens page when chat is open) */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden -z-10" 
+          onClick={() => setIsOpen(false)}
+        />
       )}
     </div>
   );
