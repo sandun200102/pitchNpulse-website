@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GiViolin, GiPianoKeys, GiMicrophone } from 'react-icons/gi';
-import { FaDrum, FaTimes, FaMusic, FaChevronRight, FaCheckCircle, FaWhatsapp } from 'react-icons/fa';
+import { FaDrum, FaTimes, FaMusic, FaCheckCircle, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 export default function Classes() {
   const [showVideo, setShowVideo] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
 
-  // WhatsApp Configuration
-  const PHONE_NUMBER = "94761625663"; // Sri Lanka country code + number
+  // Contact Configuration
+  const PHONE_NUMBER = "94761625663"; 
+  const EMAIL_ADDRESS = "info@musicstudio.com"; // Replace with your actual email
 
   const getWhatsAppLink = (instrument) => {
     const baseMsg = `Hello! I'm interested in booking a trial lesson for ${instrument}. Could you please provide more details?`;
     return `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(baseMsg)}`;
+  };
+
+  const getEmailLink = (instrument) => {
+    const subject = `Inquiry: ${instrument} Trial Lesson`;
+    const body = `Hello,\n\nI am interested in enrolling for the ${instrument} course. Could you please provide more information regarding the class schedules, fees, and the trial lesson process?\n\nThank you.`;
+    return `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const syllabusData = {
@@ -75,10 +82,10 @@ export default function Classes() {
   };
 
   const courses = [
-    { name: 'Tabla & Rhythm', icon: FaDrum, desc: 'Master traditional beats and complex rhythmic cycles from classical foundations.', path: '/classes/tabla', levels: 'Beg - Adv', age: 'All Ages', format: 'Online / In-person' },
-    { name: 'Vocal Training', icon: GiMicrophone, desc: 'Perfect your pitch and breath control across multiple musical genres.', path: '/classes/vocals', levels: 'Beg - Adv', age: 'Kids / Teens / Adults', format: 'Online / In-person' },
-    { name: 'Harmonium', icon: GiPianoKeys, desc: 'Learn the soul of devotional music through melody and hand-pumped bellows.', path: '/classes/harmonium', levels: 'Beg - Int', age: 'All Ages', format: 'In-person' },
-    { name: 'Violin Mastery', icon: GiViolin, desc: 'Explore the elegance of strings, from basic bowing to advanced concertos.', path: '/classes/violin', levels: 'Beg - Adv', age: 'Kids / Teens / Adults', format: 'Online / In-person' }
+    { name: 'Tabla & Rhythm', icon: FaDrum, desc: 'Master traditional beats and complex rhythmic cycles from classical foundations.', levels: 'Beg - Adv', age: 'All Ages', format: 'Online / In-person' },
+    { name: 'Vocal Training', icon: GiMicrophone, desc: 'Perfect your pitch and breath control across multiple musical genres.', levels: 'Beg - Adv', age: 'Kids / Teens / Adults', format: 'Online / In-person' },
+    { name: 'Harmonium', icon: GiPianoKeys, desc: 'Learn the soul of devotional music through melody and hand-pumped bellows.', levels: 'Beg - Int', age: 'All Ages', format: 'In-person' },
+    { name: 'Violin Mastery', icon: GiViolin, desc: 'Explore the elegance of strings, from basic bowing to advanced concertos.', levels: 'Beg - Adv', age: 'Kids / Teens / Adults', format: 'Online / In-person' }
   ];
 
   return (
@@ -162,19 +169,31 @@ export default function Classes() {
               ))}
             </div>
 
-            {/* Modal Footer with Dynamic WhatsApp Link */}
-            <div className="p-8 border-t border-stone-800 bg-black/50 text-center">
-              <a 
-                href={getWhatsAppLink(selectedCourse)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#25D366] text-white px-12 py-5 rounded-full font-black text-xl hover:bg-[#128C7E] transition-all shadow-xl hover:scale-105 active:scale-95"
-              >
-                <FaWhatsapp size={24} />
-                BOOK A TRIAL FOR {selectedCourse.toUpperCase()}
-              </a>
-              <p className="text-stone-500 text-xs mt-4 uppercase tracking-widest">
-                Fastest Response via WhatsApp
+            {/* Modal Footer with Dynamic Contact Buttons */}
+            <div className="p-8 border-t border-stone-800 bg-black/50">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-3xl mx-auto">
+                {/* WhatsApp Button */}
+                <a 
+                  href={getWhatsAppLink(selectedCourse)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-2xl font-black text-sm md:text-base hover:bg-[#128C7E] transition-all shadow-xl hover:scale-[1.02] active:scale-95"
+                >
+                  <FaWhatsapp size={20} />
+                  BOOK VIA WHATSAPP
+                </a>
+
+                {/* Email Button */}
+                <a 
+                  href={getEmailLink(selectedCourse)}
+                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 bg-white text-stone-900 px-6 py-4 rounded-2xl font-black text-sm md:text-base hover:bg-stone-200 transition-all shadow-xl hover:scale-[1.02] active:scale-95"
+                >
+                  <FaEnvelope size={18} />
+                  BOOK VIA EMAIL
+                </a>
+              </div>
+              <p className="text-stone-500 text-[10px] mt-6 text-center uppercase tracking-[0.2em] font-bold">
+                Secure your trial session today
               </p>
             </div>
           </div>
