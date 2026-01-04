@@ -3,7 +3,7 @@ import {
   HiCheckCircle, HiLocationMarker, HiClock, HiAcademicCap, 
   HiSparkles, HiBookOpen, HiUsers, HiLightningBolt, 
   HiHeart, HiPhone, HiVideoCamera, HiUserGroup,
-  HiArrowNarrowRight, HiCalendar, HiMusicNote
+  HiArrowNarrowRight, HiCalendar, HiMusicNote, HiMail
 } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
@@ -141,7 +141,7 @@ export default function Pricing() {
             </div>
           </section>
 
-          {/* UPDATED: Perks Section without Discount */}
+          {/* Academy Perks */}
           <div className="p-8 rounded-[2.5rem] bg-stone-900 text-white relative overflow-hidden shadow-lg border border-stone-800">
              <div className="absolute top-0 right-0 p-4 opacity-10">
                 <HiMusicNote size={80} />
@@ -150,7 +150,7 @@ export default function Pricing() {
                <HiAcademicCap /> Academy Perks
              </h4>
              <p className="text-stone-400 text-sm leading-relaxed">
-              Ongoing students gain exclusive access to our <span className="text-white font-bold">dedicated progress portal</span> and future <span className="text-white font-bold">performance opportunities</span> to showcase their talent.
+               Ongoing students gain exclusive access to our <span className="text-white font-bold">dedicated progress portal</span> and future <span className="text-white font-bold">performance opportunities</span> to showcase their talent.
             </p>
           </div>
         </div>
@@ -158,21 +158,32 @@ export default function Pricing() {
 
       {/* FOOTER */}
       <div className="max-w-6xl mx-auto mt-20 pt-10 border-t border-stone-100">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-stone-50 p-6 rounded-3xl flex items-center gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <a href="https://www.google.com/maps/search/Canning+Vale+WA+6155" target="_blank" rel="noreferrer" className="bg-stone-50 p-6 rounded-3xl flex items-center gap-4 hover:bg-stone-100 transition-colors">
             <div className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center text-orange-500 shadow-sm"><HiLocationMarker size={24}/></div>
             <div>
               <p className="text-[10px] font-black uppercase tracking-widest text-stone-400">Location</p>
               <p className="text-stone-900 font-bold text-sm leading-tight">Canning Vale WA, 6155</p>
             </div>
-          </div>
-          <div className="bg-stone-50 p-6 rounded-3xl flex items-center gap-4">
+          </a>
+
+          <a href="tel:+61466680198" className="bg-stone-50 p-6 rounded-3xl flex items-center gap-4 hover:bg-stone-100 transition-colors">
             <div className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center text-orange-500 shadow-sm"><HiPhone size={24}/></div>
             <div>
               <p className="text-[10px] font-black uppercase tracking-widest text-stone-400">Contact</p>
               <p className="text-stone-900 font-bold text-sm leading-tight">+61 466 680 198</p>
             </div>
-          </div>
+          </a>
+
+          <a href="mailto:pitchpulseacademy@gmail.com" className="bg-stone-50 p-6 rounded-3xl flex items-center gap-4 hover:bg-stone-100 transition-colors overflow-hidden">
+            <div className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center text-orange-500 shadow-sm"><HiMail size={24}/></div>
+            <div className="overflow-hidden">
+              <p className="text-[10px] font-black uppercase tracking-widest text-stone-400">Email</p>
+              <p className="text-stone-900 font-bold text-[13px] leading-tight truncate">pitchpulseacademy@gmail.com</p>
+            </div>
+          </a>
+
           <div className="bg-orange-50 p-6 rounded-3xl flex items-center gap-4 border border-orange-100">
             <div className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center text-orange-500 shadow-sm"><HiClock size={24}/></div>
             <div>
@@ -180,6 +191,7 @@ export default function Pricing() {
               <p className="text-orange-700 font-bold text-sm leading-tight">Flexible Timings</p>
             </div>
           </div>
+
         </div>
       </div>
     </div>

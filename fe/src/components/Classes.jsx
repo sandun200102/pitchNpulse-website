@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GiViolin, GiPianoKeys, GiMicrophone } from 'react-icons/gi';
-import { FaDrum, FaTimes, FaMusic, FaChevronRight, FaCheckCircle } from 'react-icons/fa';
+import { FaDrum, FaTimes, FaMusic, FaChevronRight, FaCheckCircle, FaWhatsapp } from 'react-icons/fa';
 
 export default function Classes() {
   const [showVideo, setShowVideo] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
 
-  // Full Syllabus Data Mapping
+  // WhatsApp Configuration
+  const PHONE_NUMBER = "94761625663"; // Sri Lanka country code + number
+
+  const getWhatsAppLink = (instrument) => {
+    const baseMsg = `Hello! I'm interested in booking a trial lesson for ${instrument}. Could you please provide more details?`;
+    return `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(baseMsg)}`;
+  };
+
   const syllabusData = {
     'Tabla & Rhythm': {
       beginner: {
@@ -155,11 +162,20 @@ export default function Classes() {
               ))}
             </div>
 
-            {/* Modal Footer */}
-            <div className="p-6 border-t border-stone-800 bg-black/50 text-center">
-              <Link to="/contact" className="inline-block bg-white text-black px-12 py-4 rounded-full font-black text-lg hover:bg-orange-500 hover:text-white transition-all">
-                BOOK A TRIAL LESSON
-              </Link>
+            {/* Modal Footer with Dynamic WhatsApp Link */}
+            <div className="p-8 border-t border-stone-800 bg-black/50 text-center">
+              <a 
+                href={getWhatsAppLink(selectedCourse)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#25D366] text-white px-12 py-5 rounded-full font-black text-xl hover:bg-[#128C7E] transition-all shadow-xl hover:scale-105 active:scale-95"
+              >
+                <FaWhatsapp size={24} />
+                BOOK A TRIAL FOR {selectedCourse.toUpperCase()}
+              </a>
+              <p className="text-stone-500 text-xs mt-4 uppercase tracking-widest">
+                Fastest Response via WhatsApp
+              </p>
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ export default function AboutMe() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const emailAddress = "pitchpulseacademy@gmail.com";
 
   // 2. Timer for the automatic loop (changes every 5 seconds)
   useEffect(() => {
@@ -64,10 +65,10 @@ export default function AboutMe() {
               Aravinda A. Gunasekara
             </h2>
             <p className="text-stone-600 mb-6 leading-relaxed text-lg">
-              Aravinda is a graduate-qualified music teacher dedicated to nurturing talent through structured, creative, and practical learning. He holds a <strong>Bachelor of Performing Arts (Special)</strong> from the University of the Visual and Performing Arts, Colombo—Sri Lanka’s premier institution for specialized music studies.
+              Aravinda is a graduate-qualified music teacher dedicated to nurturing talent through structured, creative, and practical learning. He holds a <strong>Bachelor of Performing Arts (Special)</strong> from the University of the Visual and Performing Arts, Colombo.
             </p>
             <p className="text-stone-600 mb-6 leading-relaxed">
-              As a <strong>Sangeeth Visharad</strong> in Violin, Tabla, and Vocal, Aravinda brings over 15 years of experience in performance and education. His supportive and adaptive style caters to everyone from young beginners to adult learners.
+              As a <strong>Sangeeth Visharad</strong> in Violin, Tabla, and Vocal, Aravinda brings over 15 years of experience. You can reach him directly at <a href={`mailto:${emailAddress}`} className="text-orange-600 hover:underline font-medium">{emailAddress}</a>.
             </p>
             
             <div className="grid grid-cols-2 gap-8 py-6 border-y border-stone-100">
@@ -91,12 +92,12 @@ export default function AboutMe() {
             <div>
               <h3 className="text-3xl font-serif font-bold mb-6 text-orange-500">The Academy</h3>
               <p className="text-stone-300 leading-relaxed mb-6">
-                Based in <strong>Western Australia</strong>, Pitch & Pulse Academy is a modern music academy dedicated to delivering high-quality education. We bridge traditional artistry with contemporary teaching techniques to develop pitch, rhythm, and performance confidence.
+                Based in <strong>Western Australia</strong>, Pitch & Pulse Academy is a modern music academy dedicated to delivering high-quality education. We bridge traditional artistry with contemporary teaching techniques.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 text-orange-500">✔</div>
-                  <p className="text-stone-400"><span className="text-white font-semibold">Specialization:</span> Sri Lankan Light & Folk Music, and Indian Classical Music.</p>
+                  <p className="text-stone-400"><span className="text-white font-semibold">Contact:</span> <a href={`mailto:${emailAddress}`} className="hover:text-orange-400 transition-colors">{emailAddress}</a></p>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="mt-1 text-orange-500">✔</div>
@@ -169,9 +170,13 @@ export default function AboutMe() {
             <p className="text-2xl font-serif italic text-stone-800 max-w-3xl mx-auto">
               "Our goal is to inspire confidence and creativity while delivering a practical musical foundation for every student."
             </p>
-            <button className="mt-8 bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-700 transition-colors">
+            <a 
+              href={`mailto:${emailAddress}`}
+              className="mt-8 inline-block bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-700 transition-colors"
+            >
               Begin Your Musical Journey
-            </button>
+            </a>
+            <p className="mt-4 text-stone-500 text-sm font-medium">{emailAddress}</p>
           </div>
         </div>
       </section>
