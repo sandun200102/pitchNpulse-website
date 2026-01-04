@@ -167,17 +167,20 @@ export default function AboutMe() {
 
           {/* Final Quote/CTA */}
           <div className="mt-20 text-center bg-orange-50 p-12 rounded-[3rem]">
-            <p className="text-2xl font-serif italic text-stone-800 max-w-3xl mx-auto">
-              "Our goal is to inspire confidence and creativity while delivering a practical musical foundation for every student."
-            </p>
-            <a 
-              href={`mailto:${emailAddress}`}
-              className="mt-8 inline-block bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-700 transition-colors"
-            >
-              Begin Your Musical Journey
-            </a>
-            <p className="mt-4 text-stone-500 text-sm font-medium">{emailAddress}</p>
-          </div>
+          <p className="text-2xl font-serif italic text-stone-800 max-w-3xl mx-auto">
+            "Our goal is to inspire confidence and creativity while delivering a practical musical foundation for every student."
+          </p>
+          
+          {/* Updated Link Below */}
+          <a 
+            href={`mailto:${emailAddress}?subject=Inquiry about Music Lessons&body=Hi Aravinda, I would like to learn more about...`}
+            className="mt-8 inline-block bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-700 transition-colors"
+          >
+            Begin Your Musical Journey
+          </a>
+
+          <p className="mt-4 text-stone-500 text-sm font-medium">{emailAddress}</p>
+        </div>
         </div>
       </section>
     </div>
