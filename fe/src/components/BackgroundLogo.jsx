@@ -23,20 +23,20 @@ const BackgroundLogo = () => {
 
   const imageStyle = {
     position: 'absolute',
-    opacity: 0.8,
+    opacity: 1,
     filter: 'brightness(1.5)',
     transition: 'all 0.3s ease', // Smooth movement between views
     // Responsive Logic:
-    top: isMobile ? '2%' : '25%',
+    top: isMobile ? '9%' : '40%',
     left: isMobile ? '50%' : '-12%',
     transform: isMobile ? 'translateX(-50%) rotate(0deg)' : 'rotate(0deg)',
-    width: isMobile ? '300px' : '800px',
+    width: isMobile ? '300px' : '650px',
   };
 
   return (
     <div style={containerStyle}>
       <img 
-        src="/musician.png" 
+        src="/pro1.jpeg" 
         alt="Pitch and Pulse Background" 
         style={imageStyle}
         onError={(e) => console.error("Logo image failed to load.")}

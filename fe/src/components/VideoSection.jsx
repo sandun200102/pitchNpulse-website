@@ -16,19 +16,59 @@ export default function VideoSection() {
       id: 1, 
       title: "Piano Basics for Beginners", 
       videoSrc: "/vid1.mp4", 
-      img: "gitar.jpg" 
+      img: "pi1.png" 
     },
     { 
       id: 2, 
       title: "Advanced Guitar Shredding", 
       videoSrc: "/vid2.mp4", 
-      img: "violin.jpg" 
+      img: "pi2.png" 
     },
     { 
       id: 3, 
       title: "Vocal Warmups", 
       videoSrc: "/vid3.mp4", 
-      img: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800" 
+      img: "pi3.png" 
+    },{ 
+      id: 4, 
+      title: "Piano Basics for Beginners", 
+      videoSrc: "/vid4.mp4", 
+      img: "pi4.png" 
+    },
+    { 
+      id: 5, 
+      title: "Advanced Guitar Shredding", 
+      videoSrc: "/vid5.mp4", 
+      img: "pi5.png" 
+    },
+    { 
+      id: 6, 
+      title: "Vocal Warmups", 
+      videoSrc: "/vid6.mp4", 
+      img: "pi6.png" 
+    },{ 
+      id: 7, 
+      title: "Piano Basics for Beginners", 
+      videoSrc: "/vid_n1.mp4", 
+      img: "p1.png" 
+    },
+    { 
+      id: 8, 
+      title: "Advanced Guitar Shredding", 
+      videoSrc: "/vid_n2.mp4", 
+      img: "p2.png" 
+    },
+    { 
+      id: 9, 
+      title: "Vocal Warmups", 
+      videoSrc: "/vid_n3.mp4", 
+      img: "p3.png" 
+    },
+    { 
+      id: 10, 
+      title: "Vocal Warmups", 
+      videoSrc: "/vid_n4.mp4", 
+      img: "p4.png" 
     },
   ];
 

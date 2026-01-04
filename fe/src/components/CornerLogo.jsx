@@ -1,47 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const CornerLogo = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // NEW: Logic to hide the component on mobile
-  if (isMobile) {
-    return null;
-  }
-
   const containerStyle = {
     position: 'fixed',
-    top: '-40px',
-    left: '-25px',
+    top: '-30px',
+    left: '-20px',
     zIndex: 60,
     pointerEvents: 'none',
-    backgroundColor: 'transparent',
   };
 
   const imageStyle = {
     display: 'block',
-    height: '240px', 
-    width: 'auto',
     backgroundColor: 'transparent',
     pointerEvents: 'auto',
-    border: 'none',
-    outline: 'none',
+    
+    /* SCALING LOGIC:
+       - Max height: 240px
+       - Min height: 140px
+       - Scales smoothly between 1440px and 768px screen width
+    */
+    height: 'clamp(140px, 12vw + 20px, 240px)',
+    width: 'auto',
+    transition: 'height 0.1s linear', 
   };
 
   return (
-    <div style={containerStyle}>
-      <img 
-        src="Music-logo.png" 
-        alt="Pitch & Pulse Logo" 
-        style={imageStyle}
-      />
-    </div>
+    <>
+      <style>
+        {`
+          /* Smoothly hide when it hits mobile width */
+          @media (max-width: 768px) {
+            .corner-logo-wrap {
+              display: none !important;
+            }
+          }
+
+          /* Optional: Subtle fade if the screen is very short (height-wise) */
+          @media (max-height: 500px) {
+            .corner-logo-wrap {
+              opacity: 0.5;
+            }
+          }
+        `}
+      </style>
+      
+      <div style={containerStyle} className="corner-logo-wrap">
+        <img 
+          src="Music-logo.png" 
+          alt="Pitch & Pulse Logo" 
+          style={imageStyle}
+        />
+      </div>
+    </>
   );
 };
 

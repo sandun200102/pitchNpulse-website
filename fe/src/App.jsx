@@ -33,7 +33,7 @@ function App() {
     <div className="relative bg-stone-50 min-h-screen font-sans selection:bg-amber-200 overflow-x-hidden">
       
       {/* LAYER 1: Background Elements (Persistent) */}
-      <CornerLogo />
+      {/* <CornerLogo /> */}
       <BackgroundLogo />
       <MusicFlying />
 
@@ -49,18 +49,18 @@ function App() {
                 {/* MOBILE PADDING: 'pt-80' pushes text down to make room for the logo at the top.
                    DESKTOP PADDING: 'md:pt-10' restores the original spacing.
                 */}
-                <header className="relative px-6 pt-36 md:pt-10 pb-24 max-w-7xl mx-auto text-center">
+                <header className="relative px-6 pt-45 md:pt-10 pb-24 max-w-7xl mx-auto text-center">
                   
                   {/* ADS ONLY ON HOME & MOVES WITH SCROLL */}
                   <SideAdSlider />
 
-                  <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-amber-100/80 backdrop-blur-sm text-amber-800 text-sm font-bold tracking-wide animate-fade-in border border-amber-200">
-                    🎶 Now enrolling for 2026 Semester
+                  <div className="inline-block px-4 py-1.5  mb-6 rounded-full bg-amber-100/80 backdrop-blur-sm text-amber-800 text-sm font-bold tracking-wide animate-fade-in border border-amber-200">
+                    🎶 Now enrolling for 2026
                   </div>
                   
                   <h1 className="text-4xl md:text-6xl font-serif font-bold text-stone-900 leading-[1.1] mb-1 drop-shadow-sm">
-                    Master the Art of <br />
-                    <span className="italic text-amber-600">Musical Expression</span>
+                    "Where   <br />
+                    <span className="italic text-amber-600">Pitch Meets Rhythm"</span>
                   </h1>
 
                   {/* PREMIUM SIGNATURE SECTION */}
@@ -68,7 +68,7 @@ function App() {
                     <div className="relative inline-flex flex-col items-center">
                       <div className="relative leading-tight px-2">
                         <span className="text-lg md:text-3xl font-bold uppercase tracking-[0.25em] bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#aa771c] bg-[length:200%_auto] bg-clip-text text-transparent animate-gold-run drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)]">
-                          K.R.S.Madhuwantha
+                          Aravinda A. Gunasekara 
                         </span>
                       </div>
                       <div className="relative w-full h-[1.5px] mt-1.5 overflow-hidden rounded-full">
@@ -82,8 +82,8 @@ function App() {
 
                   <div className="mt-12">
                     <p className="text-stone-600 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed bg-stone-50/40 backdrop-blur-[2px] rounded-lg">
-                      Personalized music coaching for piano, guitar, and theory. 
-                      Available for local sessions and global online classes.
+                      Professional vocal and instrumental music training in Sri Lankan light and folk music and Indian classical music, for students of all ages.
+
                     </p>
                     
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
