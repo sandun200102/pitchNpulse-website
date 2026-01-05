@@ -2,8 +2,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export default function WhatsAppButton() {
   // CONFIGURATION
-  const countryCode = "94";
-  const localNumber = "761625663"; // Your number without the leading '0'
+  const countryCode = "61"; // Australia country code
+  const localNumber = "466680198"; // Your number without the leading '0'
   const fullNumber = countryCode + localNumber;
   const message = encodeURIComponent("Hello! I'm interested in your music lessons.");
 

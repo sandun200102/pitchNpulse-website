@@ -158,7 +158,7 @@ export default function Pricing() {
 
       {/* FOOTER */}
       <div className="max-w-6xl mx-auto mt-20 pt-10 border-t border-stone-100">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           
           <a href="https://www.google.com/maps/search/Canning+Vale+WA+6155" target="_blank" rel="noreferrer" className="bg-stone-50 p-6 rounded-3xl flex items-center gap-4 hover:bg-stone-100 transition-colors">
             <div className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center text-orange-500 shadow-sm"><HiLocationMarker size={24}/></div>
@@ -168,13 +168,7 @@ export default function Pricing() {
             </div>
           </a>
 
-          <a href="tel:+61466680198" className="bg-stone-50 p-6 rounded-3xl flex items-center gap-4 hover:bg-stone-100 transition-colors">
-            <div className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center text-orange-500 shadow-sm"><HiPhone size={24}/></div>
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-stone-400">Contact</p>
-              <p className="text-stone-900 font-bold text-sm leading-tight">+61 466 680 198</p>
-            </div>
-          </a>
+          
 
           <a href="mailto:pitchpulseacademy@gmail.com" className="bg-stone-50 p-6 rounded-3xl flex items-center gap-4 hover:bg-stone-100 transition-colors overflow-hidden">
             <div className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center text-orange-500 shadow-sm"><HiMail size={24}/></div>

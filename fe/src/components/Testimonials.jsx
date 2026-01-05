@@ -1,43 +1,52 @@
 import { useState, useEffect } from 'react';
+import { createClient } from '@supabase/supabase-js';
+
+// 1. Initialize Supabase Client
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function Testimonials() {
-  // 1. Initialize state: Try to load from localStorage, otherwise use defaults
-  const [reviews, setReviews] = useState(() => {
-    const saved = localStorage.getItem('music_teacher_reviews');
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch (e) {
-        console.error("Error parsing reviews", e);
-      }
-    }
-    return [
-      { id: 1, name: "John Smith", role: "Guitarist", text: "Amazing teacher! My progress has tripled in just 2 months." },
-      { id: 2, name: "Elena Rossi", role: "Vocalist", text: "Very professional and patient. Highly recommended for kids." },
-      { id: 3, name: "David Wu", role: "Pianist", text: "The online classes are just as good as in-person. 10/10!" },
-    ];
-  });
-
-  // State for the form input
+  const [reviews, setReviews] = useState([]);
   const [formData, setFormData] = useState({ name: '', role: '', text: '' });
+  const [loading, setLoading] = useState(true);
 
-  // 2. Sync with localStorage whenever the 'reviews' array changes
+  // 2. FETCH: Load data from Supabase on mount
   useEffect(() => {
-    localStorage.setItem('music_teacher_reviews', JSON.stringify(reviews));
-  }, [reviews]);
+    async function fetchReviews() {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .order('created_at', { ascending: false });
 
-  const handleSubmit = (e) => {
+      if (error) {
+        console.error("Error fetching reviews:", error.message);
+      } else {
+        setReviews(data);
+      }
+      setLoading(false);
+    }
+    fetchReviews();
+  }, []);
+
+  // 3. SUBMIT: Save data to Supabase
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.text) return;
-    
-    // Add new review with a unique ID and reset form
-    const newReview = {
-      ...formData,
-      id: Date.now() // Unique ID for React keys
-    };
 
-    setReviews([newReview, ...reviews]);
-    setFormData({ name: '', role: '', text: '' });
+    const { data, error } = await supabase
+      .from('reviews')
+      .insert([formData])
+      .select();
+
+    if (error) {
+      alert(`Error saving review: ${error.message}`);
+    } else {
+      // Add new review to the top of the UI list
+      setReviews([data[0], ...reviews]);
+      setFormData({ name: '', role: '', text: '' });
+    }
   };
 
   return (
@@ -47,14 +56,19 @@ export default function Testimonials() {
         
         {/* Horizontal Scroll Display */}
         <div className="flex gap-6 overflow-x-auto snap-x no-scrollbar pb-12">
-          {reviews.map((rev) => (
-            <ReviewCard key={rev.id} review={rev} />
-          ))}
+          {loading ? (
+            <div className="w-full text-center text-stone-500 animate-pulse">Loading global stories...</div>
+          ) : reviews.length === 0 ? (
+            <div className="w-full text-center text-stone-400">No stories yet. Be the first to share!</div>
+          ) : (
+            reviews.map((rev) => (
+              <ReviewCard key={rev.id} review={rev} />
+            ))
+          )}
         </div>
 
         <hr className="border-stone-200 mb-16" />
 
-        {/* Input & Preview Section */}
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Form */}
           <form onSubmit={handleSubmit} className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100">
@@ -63,6 +77,7 @@ export default function Testimonials() {
               <input 
                 type="text" 
                 placeholder="Your Name" 
+                required
                 className="w-full p-3 rounded-xl border border-stone-200 focus:outline-amber-500"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -77,12 +92,16 @@ export default function Testimonials() {
               <textarea 
                 placeholder="Your Review" 
                 rows="4"
+                required
                 className="w-full p-3 rounded-xl border border-stone-200 focus:outline-amber-500"
                 value={formData.text}
                 onChange={(e) => setFormData({...formData, text: e.target.value})}
               />
-              <button className="w-full bg-amber-600 text-white py-3 rounded-xl font-bold hover:bg-amber-700 transition">
-                Post Review
+              <button 
+                type="submit"
+                className="w-full bg-amber-600 text-white py-3 rounded-xl font-bold hover:bg-amber-700 transition"
+              >
+                Post Review Globally
               </button>
             </div>
           </form>
@@ -90,7 +109,7 @@ export default function Testimonials() {
           {/* Preview Section */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest text-stone-400 mb-4 ml-2">Live Preview</h3>
-            <div className="opacity-80">
+            <div className="opacity-70">
                 <ReviewCard 
                   review={{
                     name: formData.name || "Your Name",
@@ -106,7 +125,6 @@ export default function Testimonials() {
   );
 }
 
-// Reusable Card Component
 function ReviewCard({ review }) {
   return (
     <div className="min-w-[85%] md:min-w-[400px] snap-center bg-white p-8 rounded-3xl border border-stone-100 shadow-sm">
