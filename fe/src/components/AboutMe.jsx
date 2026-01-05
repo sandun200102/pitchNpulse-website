@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { PiMicrophoneStageFill } from "react-icons/pi";
+import { MdMonitorHeart } from "react-icons/md";
+import { RiShakeHandsLine } from "react-icons/ri";
 
 export default function AboutMe() {
   // 1. Array of your three images
@@ -139,30 +142,41 @@ export default function AboutMe() {
             <p className="text-stone-500 mt-4">We prepare you for the stage and beyond.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8">
-              <div className="text-4xl mb-4">🏆</div>
-              <h4 className="text-xl font-bold mb-3">Exams & Mentoring</h4>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                Dedicated guidance for <strong>Visharad examinations</strong>, following structured syllabi with personalized mentoring.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-stone-100 rounded-2xl overflow-hidden bg-white shadow-sm">
+  
+            {/* Card 1 */}
+            <div className="group flex flex-col items-center text-center p-10 transition-colors duration-300 hover:bg-stone-50">
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-stone-100 text-stone-900 text-3xl mb-6 transition-transform duration-500 group-hover:scale-110">
+                <MdMonitorHeart />
+              </div>
+              <h4 className="text-xl font-bold text-stone-900 mb-4">Exams & Mentoring</h4>
+              <p className="text-stone-600 text-[15px] leading-relaxed max-w-[280px]">
+                Dedicated guidance for <strong className="text-stone-900">Visharad examinations</strong>, following structured syllabi with personalized mentoring.
               </p>
             </div>
 
-            <div className="text-center p-8 border-x border-stone-100">
-              <div className="text-4xl mb-4">🎤</div>
-              <h4 className="text-xl font-bold mb-3">Stage Experience</h4>
-              <p className="text-stone-600 text-sm leading-relaxed">
+            {/* Card 2 - The Centerpiece */}
+            <div className="group flex flex-col items-center text-center p-10 bg-stone-50/50 border-y md:border-y-0 md:border-x border-stone-100 transition-colors duration-300 hover:bg-stone-50">
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-stone-100 text-stone-900 text-3xl mb-6 transition-transform duration-500 group-hover:scale-110">
+                <PiMicrophoneStageFill />
+              </div>
+              <h4 className="text-xl font-bold text-stone-900 mb-4">Stage Experience</h4>
+              <p className="text-stone-600 text-[15px] leading-relaxed max-w-[280px]">
                 Preparation for music competitions, school performances, and stage shows to build real-world confidence.
               </p>
             </div>
 
-            <div className="text-center p-8">
-              <div className="text-4xl mb-4">🌱</div>
-              <h4 className="text-xl font-bold mb-3">Supportive Environment</h4>
-              <p className="text-stone-600 text-sm leading-relaxed">
+            {/* Card 3 */}
+            <div className="group flex flex-col items-center text-center p-10 transition-colors duration-300 hover:bg-stone-50">
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-stone-100 text-stone-900 text-3xl mb-6 transition-transform duration-500 group-hover:scale-110">
+                <RiShakeHandsLine />
+              </div>
+              <h4 className="text-xl font-bold text-stone-900 mb-4">Supportive Environment</h4>
+              <p className="text-stone-600 text-[15px] leading-relaxed max-w-[280px]">
                 Every student grows at their own pace in an encouraging space designed to inspire a lifelong love for music.
               </p>
             </div>
+
           </div>
 
           {/* Final Quote/CTA */}

@@ -25,6 +25,8 @@ import Vocal from './pages/Vocal';
 import Violin from './pages/Violin';
 import ChatBot from './components/ChatBot';
 import CornerLogo from './components/CornerLogo';
+import Banner from './components/Banner';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [showVideo, setShowVideo] = useState(false);
@@ -36,6 +38,7 @@ function App() {
       {/* <CornerLogo /> */}
       <BackgroundLogo />
       <MusicFlying />
+      
 
       {/* LAYER 2: Main Layout */}
       <div className="relative z-10 min-h-screen flex flex-col">
@@ -58,9 +61,9 @@ function App() {
                     🎶 Now enrolling for 2026
                   </div>
                   
-                  <h1 className="text-4xl md:text-6xl font-serif font-bold text-stone-900 leading-[1.1] mb-1 drop-shadow-sm">
-                    "Where   <br />
-                    <span className="italic text-amber-600">Pitch Meets Rhythm"</span>
+                  <h1 className="text-4xl md:text-6xl font-serif font-bold text-amber-600 leading-[1.1] mb-1 drop-shadow-sm">
+                    Where   <br />
+                    <span className="italic text-amber-600">Pitch Meets Rhythm</span>
                   </h1>
 
                   {/* PREMIUM SIGNATURE SECTION */}
@@ -93,9 +96,27 @@ function App() {
                       >
                         See Introduction
                       </button>
-                      <a href="#socials" className="px-10 py-5 bg-white/80 backdrop-blur-md border border-stone-200 text-stone-900 rounded-2xl font-bold text-lg hover:bg-white transition-all flex items-center justify-center shadow-sm">
-                        View My Work
-                      </a>
+                      <Link to="/videos" className="inline-block">
+                      <button className="group relative px-10 py-5 bg-amber-700 border border-stone-200 text-white rounded-xl font-semibold text-lg overflow-hidden transition-all duration-300 hover:border-stone-900 active:scale-[0.98]">
+                        
+                        {/* Background Slide Layer */}
+                        <div className="absolute inset-0 w-0 bg-stone-900 transition-all duration-[450px] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:w-full" />
+                        
+                        {/* Button Text */}
+                        <span className="relative flex items-center gap-2 transition-colors duration-[450px] ease-in-out group-hover:text-white">
+                          View My Work
+                          <svg 
+                            className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </span>
+
+                      </button>
+                    </Link>
                     </div>
                   </div>
                 </header>
@@ -107,7 +128,7 @@ function App() {
                       <button onClick={() => setShowVideo(false)} className="absolute top-4 right-4 z-50 text-white/50 hover:text-white transition-colors p-2 bg-black/20 rounded-full">
                         <FaTimes size={24} />
                       </button>
-                      <video autoPlay controls className="w-full h-full" src="/vid1.mp4">
+                      <video autoPlay controls className="w-full h-full" src="/vid_n2.mp4">
                         Your browser does not support the video tag.
                       </video>
                     </div>
@@ -124,15 +145,15 @@ function App() {
                     </div>
                     
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                      <SocialCard icon={FaInstagram} label="Instagram" sub="Quick Tips" iconColor="text-[#E4405F]" hoverBg="bg-[#E4405F]" link="https://instagram.com" />
+                      <SocialCard icon={FaInstagram} label="Instagram" sub="Quick Tips" iconColor="text-[#E4405F]" hoverBg="bg-[#E4405F]" link="https://www.instagram.com/pitch_pulse_academy?igsh=MWwzeGd6b29hYTBoMA%3D%3D&utm_source=qr" />
                       <SocialCard icon={FaYoutube} label="YouTube" sub="Full Lessons" iconColor="text-[#FF0000]" hoverBg="bg-[#FF0000]" link="https://youtube.com" />
                       <SocialCard icon={FaTiktok} label="TikTok" sub="Short Clips" iconColor="text-[#000000]" hoverBg="bg-[#000000]" link="https://tiktok.com" />
-                      <SocialCard icon={FaFacebookF} label="Facebook" sub="Community" iconColor="text-[#1877F2]" hoverBg="bg-[#1877F2]" link="https://facebook.com" />
+                      <SocialCard icon={FaFacebookF} label="Facebook" sub="Community" iconColor="text-[#1877F2]" hoverBg="bg-[#1877F2]" link="https://www.facebook.com/share/1DKb8HHsGU/?mibextid=wwXIfr" />
                     </div>
                   </div>
                 </section>
 
-                <VideoSection />
+                
                 <Testimonials />
               </>
             } />
@@ -145,6 +166,7 @@ function App() {
             <Route path="/classes/violin" element={<Violin />} />
             <Route path="/classes/piano" element={<Guitar/>} />
             <Route path="/classes/vocals" element={<Vocal />} />
+            <Route path="/videos" element={<VideoSection />} />
           </Routes>
         </main>
 
