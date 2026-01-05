@@ -17,6 +17,8 @@ import AboutMe from './components/AboutMe';
 import Classes from './components/Classes';
 import BackToTop from './components/BackToTop';
 import SideAdSlider from './components/SideAdSlider';
+import { GiMusicalNotes } from "react-icons/gi";
+
 
 // Page Imports
 import Tabla from './pages/Tabla';
@@ -57,8 +59,17 @@ function App() {
                   {/* ADS ONLY ON HOME & MOVES WITH SCROLL */}
                   <SideAdSlider />
 
-                  <div className="inline-block px-4 py-1.5  mb-6 rounded-full bg-amber-100/80 backdrop-blur-sm text-amber-800 text-sm font-bold tracking-wide animate-fade-in border border-amber-200">
-                    🎶 Now enrolling for 2026
+                  <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-amber-50/80 backdrop-blur-sm border border-amber-200/60 text-amber-900 text-[13px] font-bold tracking-wider uppercase shadow-sm animate-fade-in-down">
+  
+                    {/* Icon with a subtle bounce or pulse to draw the eye */}
+                    <span className="text-amber-600 animate-pulse">
+                      <GiMusicalNotes size={16} />
+                    </span>
+
+                    <span className="leading-none">
+                      Now enrolling for 2026
+                    </span>
+                    
                   </div>
                   
                   <h1 className="text-4xl md:text-6xl font-serif font-bold text-amber-600 leading-[1.1] mb-1 drop-shadow-sm">
