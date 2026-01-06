@@ -25,7 +25,7 @@ const BackgroundLogo = () => {
     position: 'absolute',
     transition: 'all 0.3s ease', // Smooth movement between views
     // Responsive Logic:
-    top: isMobile ? '2.5%' : '15%',
+    top: isMobile ? '2%' : '14%',
     left: isMobile ? '50%' : '-6%',
     transform: isMobile ? 'translateX(-50%) rotate(0deg)' : 'rotate(0deg)',
     width: isMobile ? '300px' : '650px',

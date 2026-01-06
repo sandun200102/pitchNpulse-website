@@ -34,7 +34,7 @@ function App() {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <div className="relative bg-stone-50 min-h-screen font-sans selection:bg-amber-200 overflow-x-hidden">
+    <div className="relative bg-white min-h-screen font-sans selection:bg-amber-200 overflow-x-hidden">
       
       {/* LAYER 1: Background Elements (Persistent) */}
       {/* <CornerLogo /> */}
