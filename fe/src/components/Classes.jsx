@@ -4,7 +4,6 @@ import { GiViolin, GiPianoKeys, GiMicrophone } from 'react-icons/gi';
 import { FaDrum, FaTimes, FaMusic, FaCheckCircle, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 export default function Classes() {
-  const [showVideo, setShowVideo] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   // Contact Configuration
@@ -23,21 +22,21 @@ export default function Classes() {
   };
 
   const syllabusData = {
-    'Tabla & Rhythm': {
+    'Tabla': {
       beginner: {
         obj: "To introduce students to the fundamentals of tabla playing and basic rhythm concepts.",
         content: ["Introduction to tabla (dayan and bayan)", "Proper hand positioning and posture", "Basic tabla bols (basic notes)", "Fundamental rhythm patterns", "Simple light lessons and exercises", "Basic taals (introductory rhythms)", "Timing and tempo control", "Practice with simple light compositions"]
       },
       intermediate: {
         obj: "To develop rhythmic understanding and introduce classical music elements along with Sri Lankan light music patterns.",
-        content: ["Revision and strengthening of basic bols", "Introduction to Indian classical music concepts", "Intermediate taals and rhythmic structures", "Variations and simple compositions", "Practice of Sri Lankan light music rhythm patterns", "Accompaniment techniques for songs", "Tempo control and rhythmic clarity", "Basic performance practice"]
+        content: ["Revision and strengthening of basic bols", "Introduction to North Indian classical music concepts", "Intermediate taals and rhythmic structures", "Variations and simple compositions", "Practice of Sri Lankan light music rhythm patterns", "Accompaniment techniques for songs", "Tempo control and rhythmic clarity", "Basic performance practice"]
       },
       advanced: {
         obj: "To achieve mastery in tabla performance, including solo playing, accompaniment, and light music applications.",
         content: ["Advanced bols and complex rhythmic patterns", "Solo tabla compositions and improvisation", "Techniques for accompaniment (vocal and instrumental)", "Advanced taals and layakari (rhythmic variations)", "Playing for Sri Lankan light music and fusion styles", "Stage performance techniques", "Confidence building and musical expression", "Tabla tuning"]
       }
     },
-    'Violin Mastery': {
+    'Violin': {
       beginner: {
         obj: "To build a strong foundation in violin playing through basic techniques and simple musical pieces.",
         content: ["Introduction to the violin and its parts", "Proper posture and bow hold", "Basic fingering techniques", "Open string exercises", "Simple scales and rhythm patterns", "Beginner-level exercises", "Easy beginner songs", "Introduction to basic music notation"]
@@ -48,7 +47,7 @@ export default function Classes() {
       },
       advanced: {
         obj: "To achieve advanced technical proficiency and deeper understanding of classical and traditional music styles.",
-        content: ["Advanced bowing and fingering techniques", "Higher-position playing and speed control", "Advanced raga knowledge and improvisation", "Indian classical music compositions", "Sri Lankan light music and folk music pieces", "Advanced songs and complex compositions", "Expression, ornamentation, and musical phrasing", "Stage performance and confidence building"]
+        content: ["Advanced bowing and fingering techniques", "Higher-position playing and speed control", "Advanced raga knowledge and improvisation", "North Indian classical music compositions", "Sri Lankan light music and folk music pieces", "Advanced songs and complex compositions", "Expression, ornamentation, and musical phrasing", "Stage performance and confidence building"]
       }
     },
     'Harmonium': {
@@ -62,7 +61,7 @@ export default function Classes() {
       },
       advanced: {
         obj: "To achieve advanced performance skills with in-depth raga knowledge and classical music application.",
-        content: ["Advanced fingering and speed control", "Playing with advanced ragas", "Raga-based improvisation and elaboration", "Indian classical music compositions", "Accompaniment for classical performances", "Sri Lankan light music performance", "Musical expression, phrasing, and dynamics", "Stage performance and confidence building"]
+        content: ["Advanced fingering and speed control", "Playing with advanced ragas", "Raga-based improvisation and elaboration", "North Indian classical music compositions", "Accompaniment for classical performances", "Sri Lankan light music performance", "Musical expression, phrasing, and dynamics", "Stage performance and confidence building"]
       }
     },
     'Vocal Training': {
@@ -76,16 +75,16 @@ export default function Classes() {
       },
       advanced: {
         obj: "To develop mastery in vocal performance, advanced raga exercises, and diverse singing styles.",
-        content: ["Advanced swara exercises for vocal agility and control", "In-depth understanding of raga-based compositions", "Mastery of Indian classical music techniques", "Performance of Sri Lankan light music and folk songs", "Improvisation and ornamentation (alankara)", "Stage performance and expression", "Developing versatility across multiple singing styles"]
+        content: ["Advanced swara exercises for vocal agility and control", "In-depth understanding of raga-based compositions", "Mastery of North Indian classical music techniques", "Performance of Sri Lankan light music and folk songs", "Improvisation and ornamentation (alankara)", "Stage performance and expression", "Developing versatility across multiple singing styles"]
       }
     }
   };
 
   const courses = [
-    { name: 'Tabla & Rhythm', icon: FaDrum, desc: 'Master traditional beats and complex rhythmic cycles from classical foundations.', levels: 'Beg - Adv', age: 'All Ages', format: 'Online / In-person' },
+    { name: 'Tabla', icon: FaDrum, desc: 'Master traditional beats and complex rhythmic cycles from classical foundations.', levels: 'Beg - Adv', age: 'All Ages', format: 'Online / In-person' },
     { name: 'Vocal Training', icon: GiMicrophone, desc: 'Perfect your pitch and breath control across multiple musical genres.', levels: 'Beg - Adv', age: 'Kids / Teens / Adults', format: 'Online / In-person' },
     { name: 'Harmonium', icon: GiPianoKeys, desc: 'Learn the soul of devotional music through melody and hand-pumped bellows.', levels: 'Beg - Int', age: 'All Ages', format: 'In-person' },
-    { name: 'Violin Mastery', icon: GiViolin, desc: 'Explore the elegance of strings, from basic bowing to advanced concertos.', levels: 'Beg - Adv', age: 'Kids / Teens / Adults', format: 'Online / In-person' }
+    { name: 'Violin', icon: GiViolin, desc: 'Explore the elegance of strings, from basic bowing to advanced concertos.', levels: 'Beg - Adv', age: 'Kids / Teens / Adults', format: 'Online / In-person' }
   ];
 
   return (
@@ -204,26 +203,15 @@ export default function Classes() {
       <section className="py-24 px-6 text-center">
         <div className="max-w-4xl mx-auto p-12 rounded-[3rem] bg-gradient-to-br from-orange-600 to-amber-600 text-white shadow-2xl">
           <h2 className="text-4xl font-serif font-bold mb-4">Unsure where to start?</h2>
-          <p className="mb-10 text-orange-100 max-w-xl mx-auto">Watch our studio tour to see our teaching methods and facility in action.</p>
-          <button onClick={() => setShowVideo(true)} className="bg-white text-orange-600 px-12 py-4 rounded-full font-black text-lg hover:shadow-2xl hover:-translate-y-1 transition-all uppercase tracking-tighter">
-            Play Studio Intro
+          <p className="mb-10 text-orange-100 max-w-xl mx-auto">Watch our previous teaching videos.</p>
+          <Link to={"/Videos"}>
+           <button  className="bg-white text-orange-600 px-12 py-4 rounded-full font-black text-lg hover:shadow-2xl hover:-translate-y-1 transition-all uppercase tracking-tighter">
+            Play Previous Videos
           </button>
+          </Link>
+          
         </div>
       </section>
-
-      {/* 5. Video Modal */}
-      {showVideo && (
-        <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/95">
-          <div className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-stone-800">
-            <button onClick={() => setShowVideo(false)} className="absolute top-4 right-4 z-10 text-white/50 hover:text-white transition-colors">
-              <FaTimes size={24} />
-            </button>
-            <video autoPlay controls className="w-full h-full" src="vid1.mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

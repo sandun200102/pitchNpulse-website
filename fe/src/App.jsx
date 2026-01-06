@@ -96,7 +96,7 @@ function App() {
 
                   <div className="mt-12">
                     <p className="text-stone-600 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed bg-stone-50/40 backdrop-blur-[2px] rounded-lg">
-                      Professional vocal and instrumental music training in Sri Lankan light and folk music and Indian classical music, for students of all ages.
+                      Professional vocal and instrumental music training in Sri Lankan light and folk music and North Indian classical music, for students of all ages.
 
                     </p>
                     
@@ -147,19 +147,28 @@ function App() {
                   </div>
                 )}
 
-                {/* Social Hub Section */}
-                <section id="socials" className="bg-white/60 backdrop-blur-md py-24 px-6 border-y border-stone-200/50">
+                
+                <section id="socials" className="relative bg-blue-100 backdrop-blur-xl py-32 px-6 border-y border-stone-200/60 overflow-hidden">
+                  {/* Decorative Background Element */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-stone-100/50 via-transparent to-transparent -z-10" />
+                  
                   <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                      <h2 className="text-3xl font-serif font-bold text-stone-900">Follow My Channel</h2>
-                      <p className="text-stone-400 mt-2 font-medium">Get free daily tips and student performance updates</p>
+                    <div className="text-center mb-20">
+                      <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 tracking-tight">
+                        Join the <span className="text-stone-500">Community</span>
+                      </h2>
+                      <div className="h-1 w-20 bg-stone-900 mx-auto mt-4 mb-4 rounded-full" />
+                      <p className="text-stone-500 text-lg mt-2 font-medium max-w-md mx-auto leading-relaxed">
+                        Get free daily tips and student performance updates delivered to your feed.
+                      </p>
                     </div>
                     
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                      <SocialCard icon={FaInstagram} label="Instagram" sub="Quick Tips" iconColor="text-[#E4405F]" hoverBg="bg-[#E4405F]" link="https://www.instagram.com/pitch_pulse_academy?igsh=MWwzeGd6b29hYTBoMA%3D%3D&utm_source=qr" />
-                      <SocialCard icon={FaYoutube} label="YouTube" sub="Full Lessons" iconColor="text-[#FF0000]" hoverBg="bg-[#FF0000]" link="https://youtube.com" />
-                      <SocialCard icon={FaTiktok} label="TikTok" sub="Short Clips" iconColor="text-[#000000]" hoverBg="bg-[#000000]" link="https://tiktok.com" />
-                      <SocialCard icon={FaFacebookF} label="Facebook" sub="Community" iconColor="text-[#1877F2]" hoverBg="bg-[#1877F2]" link="https://www.facebook.com/share/1DKb8HHsGU/?mibextid=wwXIfr" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                      {/* Cards go here */}
+                        <SocialCard icon={FaInstagram} label="Instagram" sub="Quick Tips" iconColor="text-[#E4405F]" hoverBg="bg-[#E4405F]" link="https://www.instagram.com/pitch_pulse_academy?igsh=MWwzeGd6b29hYTBoMA%3D%3D&utm_source=qr" />
+                        <SocialCard icon={FaYoutube} label="YouTube" sub="Full Lessons" iconColor="text-[#FF0000]" hoverBg="bg-[#FF0000]" link="https://youtube.com" />
+                        <SocialCard icon={FaTiktok} label="TikTok" sub="Short Clips" iconColor="text-[#000000]" hoverBg="bg-[#000000]" link="https://www.tiktok.com/@pitch.pulse.acade?_r=1&_t=ZS-92ptSxai3jW" />
+                        <SocialCard icon={FaFacebookF} label="Facebook" sub="Community" iconColor="text-[#1877F2]" hoverBg="bg-[#1877F2]" link="https://www.facebook.com/share/1DKb8HHsGU/?mibextid=wwXIfr" />
                     </div>
                   </div>
                 </section>

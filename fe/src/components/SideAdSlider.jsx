@@ -19,7 +19,7 @@ const ads = [
     id: 3, 
     src: 'h.jpg', 
     title: 'Spiritual Chords', 
-    sub: 'Harmonium Level I',
+    sub: 'Harmonium Lessons',
     accent: '#fbbf24' 
   },
   { 

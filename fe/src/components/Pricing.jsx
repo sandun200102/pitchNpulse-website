@@ -13,11 +13,11 @@ export default function Pricing() {
     price: "Free",
     period: "Trial Session",
     desc: "Test your interest and meet your instructor with a no-obligation trial. We work around your schedule.",
-    logistics: [
-      { icon: <HiUserGroup />, text: "Individual / Group" },
-      { icon: <HiClock />, text: "1h Sessions" },
-      { icon: <HiCalendar />, text: "Flexible Timing" }
-    ],
+    // logistics: [
+    //   { icon: <HiUserGroup />, text: "Individual / Group" },
+    //   { icon: <HiClock />, text: "1h Sessions" },
+    //   { icon: <HiCalendar />, text: "Flexible Timing" }
+    // ],
     features: [
       "30 Minute Private Session",
       "Instrument Consultation",
@@ -54,7 +54,7 @@ export default function Pricing() {
   return (
     <div className="bg-white py-16 px-6 font-sans">
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <span className="text-orange-600 font-bold tracking-[0.2em] uppercase text-xs">Join Pitch Pulse Academy</span>
+        <span className="text-orange-600 font-bold tracking-[0.2em] uppercase text-xs">Join Pitch & Pulse Academy</span>
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mt-3">Start Your <span className="text-orange-500">Music Journey</span></h2>
       </div>
 
@@ -75,13 +75,13 @@ export default function Pricing() {
               {freePlan.desc}
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            {/* <div className="flex flex-wrap gap-3 mb-8">
               {freePlan.logistics.map((item, i) => (
                 <div key={i} className="flex items-center gap-2 text-[10px] font-bold bg-stone-800 border border-stone-700 px-3 py-2 rounded-xl text-orange-400 uppercase tracking-wider">
                   {item.icon} {item.text}
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <ul className="space-y-4 mb-10">
               {freePlan.features.map((feature, i) => (

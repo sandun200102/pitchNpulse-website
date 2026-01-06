@@ -68,10 +68,10 @@ export default function AboutMe() {
               Aravinda A. Gunasekara
             </h2>
             <p className="text-stone-600 mb-6 leading-relaxed text-lg">
-              Aravinda is a graduate-qualified music teacher dedicated to nurturing talent through structured, creative, and practical learning. He holds a <strong>Bachelor of Performing Arts (Special)</strong> from the University of the Visual and Performing Arts, Colombo.
+              Aravinda is a graduate-qualified music teacher dedicated to nurturing talent through structured, creative, and practical learning. He holds a <strong>Bachelor of Performing Arts (Degree)</strong> from the University of the Visual and Performing Arts, Colombo.
             </p>
-            <p className="text-stone-600 mb-6 leading-relaxed">
-              As a <strong>Sangeeth Visharad</strong> in Violin, Tabla, and Vocal, Aravinda brings over 15 years of experience. You can reach him directly at <a href={`mailto:${emailAddress}`} className="text-orange-600 hover:underline font-medium">{emailAddress}</a>.
+            <p className="text-stone-600 mb-6 leading-relaxed text-lg">
+              As a <strong>Sangeeth Visharad</strong> in Violin, Tabla, and Vocal from the <strong>Bhatkhande Sangit Vidyapith, Lucknow, India</strong>, Aravinda brings over 15 years of experience.<br></br> You can reach him directly at <a href={`mailto:${emailAddress}`} className="text-orange-600 hover:underline font-medium">{emailAddress}</a>.
             </p>
             
             <div className="grid grid-cols-2 gap-8 py-6 border-y border-stone-100">
