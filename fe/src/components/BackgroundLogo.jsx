@@ -18,7 +18,9 @@ const BackgroundLogo = () => {
     inset: 0,
     pointerEvents: 'none',
     zIndex: 0,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    opacity: 0.9,
+
   };
 
   const imageStyle = {
@@ -26,7 +28,7 @@ const BackgroundLogo = () => {
     transition: 'all 0.3s ease', // Smooth movement between views
     // Responsive Logic:
     top: isMobile ? '2%' : '14%',
-    left: isMobile ? '50%' : '-6%',
+    left: isMobile ? '50%' : '-7%',
     transform: isMobile ? 'translateX(-50%) rotate(0deg)' : 'rotate(0deg)',
     width: isMobile ? '300px' : '650px',
   

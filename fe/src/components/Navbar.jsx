@@ -127,7 +127,7 @@ export default function Navbar() {
                 key={link.name} 
                 to={link.path} 
                 onClick={() => setIsOpen(false)} 
-                className="text-2xl font-serif font-bold text-stone-200 hover:text-orange-500 transition-colors"
+                className="text-1xl font-serif font-bold text-stone-200 hover:text-orange-500 transition-colors"
               >
                 {link.name}
               </Link>

@@ -5,6 +5,9 @@ import {
   HiHeart, HiPhone, HiVideoCamera, HiUserGroup,
   HiArrowNarrowRight, HiCalendar, HiMusicNote, HiMail
 } from 'react-icons/hi';
+import { IoPersonSharp } from "react-icons/io5";
+import {  HiHome } from "react-icons/hi2";
+
 import { Link } from 'react-router-dom';
 
 export default function Pricing() {
@@ -114,14 +117,30 @@ export default function Pricing() {
                 </div>
               </div>
               <div className="bg-orange-500 p-5 rounded-2xl shadow-md border border-orange-400 flex items-center gap-4">
-                <div className="text-white"><HiCalendar size={24}/></div>
+                <div className="text-white"><IoPersonSharp size={24}/></div>
                 <div>
                   <p className="text-[10px] font-bold text-orange-100 uppercase tracking-widest">Availability</p>
-                  <p className="text-white font-bold">Flexible Timings</p>
+                  <p className="text-white font-bold">Individual Classes</p>
+                </div>
+              </div>
+
+              <div className="bg-orange-500 p-5 rounded-2xl shadow-md border border-orange-400 flex items-center gap-4">
+                <div className="text-white"><HiHome size={24}/></div>
+                <div>
+                  <p className="text-[10px] font-bold text-orange-100 uppercase tracking-widest">Availability</p>
+                  <p className="text-white font-bold">Home Visits</p>
+                </div>
+              </div>
+              
+              <div className="bg-orange-500 p-5 rounded-2xl shadow-md border border-orange-400 flex items-center gap-4">
+                <div className="text-white"><HiUserGroup size={24}/></div>
+                <div>
+                  <p className="text-[10px] font-bold text-orange-100 uppercase tracking-widest">Availability</p>
+                  <p className="text-white font-bold">Group Classes</p>
                 </div>
               </div>
             </div>
-            <p className="text-xs text-stone-400 mt-4 italic text-center">Individual and group classes available with timings to suit busy schedules.</p>
+            <p className="text-xs text-stone-400 mt-4 italic text-center">We offer dedicated at-home teaching visits designed to provide one-on-one attention. Whether you prefer individual or group classes, our timings are flexible to suit even the busiest schedules.</p>
           </section>
 
           <section className="px-4">

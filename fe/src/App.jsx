@@ -28,10 +28,26 @@ import Violin from './pages/Violin';
 import ChatBot from './components/ChatBot';
 import CornerLogo from './components/CornerLogo';
 import Banner from './components/Banner';
+import ErrorPage from './pages/ErrorPage';
 import { Link } from 'react-router-dom';
+import LoadingSpinner from './components/LoadingSpinner';
+import { useEffect } from 'react';
 
 function App() {
   const [showVideo, setShowVideo] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate an API call
+    setTimeout(() => setIsLoading(false), 3000);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex h-screen w-full items-center justify-center">
+        <LoadingSpinner size="lg" color="text-indigo-500" />
+      </div>
+    );}
 
   return (
     <div className="relative bg-white min-h-screen font-sans selection:bg-amber-200 overflow-x-hidden">
@@ -95,10 +111,13 @@ function App() {
                   </div>
 
                   <div className="mt-12">
-                    <p className="text-stone-600 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed bg-stone-50/40 backdrop-blur-[2px] rounded-lg">
-                      Professional vocal and instrumental music training in Sri Lankan light and folk music and North Indian classical music, for students of all ages.
-
-                    </p>
+                    <p className="text-stone-600 text-lg md:text-xl max-w-2xl leading-relaxed bg-stone-50/40 rounded-lg mb-10
+              mx-auto text-center 
+              min-[1301px]:ml-auto min-[1301px]:text-left
+              max-[1500px]:mr-[200px] 
+              max-md:mx-auto max-md:mr-0 max-md:ml-0">
+    Professional vocal and instrumental music training in Sri Lankan light and folk music and North Indian classical music, for students of all ages.
+</p>
                     
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <button 
@@ -139,7 +158,7 @@ function App() {
                       <button onClick={() => setShowVideo(false)} className="absolute top-4 right-4 z-50 text-white/50 hover:text-white transition-colors p-2 bg-black/20 rounded-full">
                         <FaTimes size={24} />
                       </button>
-                      <video autoPlay controls className="w-full h-full" src="/vid_n2.mp4">
+                      <video autoPlay controls className="w-full h-full" src="/vid_n4.mp4">
                         Your browser does not support the video tag.
                       </video>
                     </div>
@@ -187,6 +206,7 @@ function App() {
             <Route path="/classes/piano" element={<Guitar/>} />
             <Route path="/classes/vocals" element={<Vocal />} />
             <Route path="/videos" element={<VideoSection />} />
+            <Route path="/*" element={<ErrorPage />} />
           </Routes>
         </main>
 
