@@ -78,6 +78,18 @@ export default function VideoSection() {
       videoSrc: "/vid_n4.mp4", 
       img: "p4.png" 
     },
+    { 
+      id: 11, 
+      title: "Australian classes", 
+      videoSrc: "/vid_n5.mp4", 
+      img: "pi7.png" 
+    },
+    { 
+      id: 12, 
+      title: "Australian classes", 
+      videoSrc: "/vid_n5.mp4", 
+      img: "pi8.png" 
+    },
   ];
 
   return (

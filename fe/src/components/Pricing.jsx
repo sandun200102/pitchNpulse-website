@@ -119,28 +119,36 @@ export default function Pricing() {
               <div className="bg-orange-500 p-5 rounded-2xl shadow-md border border-orange-400 flex items-center gap-4">
                 <div className="text-white"><IoPersonSharp size={24}/></div>
                 <div>
-                  <p className="text-[10px] font-bold text-orange-100 uppercase tracking-widest">Availability</p>
-                  <p className="text-white font-bold">Individual Classes</p>
+                  <p className="text-[10px] font-bold text-orange-100 uppercase tracking-widest">Classes</p>
+                  <p className="text-white font-bold">Individual / Group </p>
                 </div>
               </div>
-
               <div className="bg-orange-500 p-5 rounded-2xl shadow-md border border-orange-400 flex items-center gap-4">
-                <div className="text-white"><HiHome size={24}/></div>
+                <div className="text-white"><HiCalendar size={24}/></div>
                 <div>
                   <p className="text-[10px] font-bold text-orange-100 uppercase tracking-widest">Availability</p>
-                  <p className="text-white font-bold">Home Visits</p>
+                  <p className="text-white font-bold">Flexible Timings</p>
                 </div>
               </div>
               
-              <div className="bg-orange-500 p-5 rounded-2xl shadow-md border border-orange-400 flex items-center gap-4">
-                <div className="text-white"><HiUserGroup size={24}/></div>
-                <div>
-                  <p className="text-[10px] font-bold text-orange-100 uppercase tracking-widest">Availability</p>
-                  <p className="text-white font-bold">Group Classes</p>
-                </div>
-              </div>
+
             </div>
-            <p className="text-xs text-stone-400 mt-4 italic text-center">We offer dedicated at-home teaching visits designed to provide one-on-one attention. Whether you prefer individual or group classes, our timings are flexible to suit even the busiest schedules.</p>
+            <div class="mt-6 max-w-sm mx-auto border-t border-stone-200 pt-4">
+  <ul class="space-y-3 text-sm text-stone-600">
+    <li class="flex items-start gap-3">
+      <span class="text-stone-400">✓</span>
+      <span><strong>Personalized Attention:</strong> One-on-one or group sessions.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-stone-400">✓</span>
+      <span><strong>Flexible Location:</strong> Optional at-home visits available.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-stone-400">✓</span>
+      <span><strong>Adaptable Timing:</strong> Designed for busy schedules.</span>
+    </li>
+  </ul>
+</div>
           </section>
 
           <section className="px-4">

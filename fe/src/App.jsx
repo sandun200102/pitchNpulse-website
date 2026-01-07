@@ -32,6 +32,7 @@ import ErrorPage from './pages/ErrorPage';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from './components/LoadingSpinner';
 import { useEffect } from 'react';
+import Socials from './pages/Socials';
 
 function App() {
   const [showVideo, setShowVideo] = useState(false);
@@ -112,12 +113,12 @@ function App() {
 
                   <div className="mt-12">
                     <p className="text-stone-600 text-lg md:text-xl max-w-2xl leading-relaxed bg-stone-50/40 rounded-lg mb-10
-              mx-auto text-center 
-              min-[1301px]:ml-auto min-[1301px]:text-left
-              max-[1500px]:mr-[200px] 
-              max-md:mx-auto max-md:mr-0 max-md:ml-0">
-    Professional vocal and instrumental music training in Sri Lankan light and folk music and North Indian classical music, for students of all ages.
-</p>
+                        mx-auto text-center 
+                        min-[1301px]:ml-auto min-[1301px]:text-left
+                        max-[1500px]:mr-[200px] 
+                        max-md:mx-auto max-md:mr-0 max-md:ml-0">
+                        Professional vocal and instrumental music training in Sri Lankan light and folk music and North Indian classical music, for students of all ages.
+                    </p>
                     
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <button 
@@ -167,7 +168,7 @@ function App() {
                 )}
 
                 
-                <section id="socials" className="relative bg-blue-100 backdrop-blur-xl py-32 px-6 border-y border-stone-200/60 overflow-hidden">
+                <section id="social" className="relative bg-amber-50 backdrop-blur-xl py-32 px-6 border-y border-stone-200/60 overflow-hidden">
                   {/* Decorative Background Element */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-stone-100/50 via-transparent to-transparent -z-10" />
                   
@@ -185,7 +186,7 @@ function App() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                       {/* Cards go here */}
                         <SocialCard icon={FaInstagram} label="Instagram" sub="Quick Tips" iconColor="text-[#E4405F]" hoverBg="bg-[#E4405F]" link="https://www.instagram.com/pitch_pulse_academy?igsh=MWwzeGd6b29hYTBoMA%3D%3D&utm_source=qr" />
-                        <SocialCard icon={FaYoutube} label="YouTube" sub="Full Lessons" iconColor="text-[#FF0000]" hoverBg="bg-[#FF0000]" link="https://youtube.com" />
+                        <SocialCard icon={FaYoutube} label="YouTube" sub="Full Lessons" iconColor="text-[#FF0000]" hoverBg="bg-[#FF0000]" link="https://www.youtube.com/@PitchPulseAcademy" />
                         <SocialCard icon={FaTiktok} label="TikTok" sub="Short Clips" iconColor="text-[#000000]" hoverBg="bg-[#000000]" link="https://www.tiktok.com/@pitch.pulse.acade?_r=1&_t=ZS-92ptSxai3jW" />
                         <SocialCard icon={FaFacebookF} label="Facebook" sub="Community" iconColor="text-[#1877F2]" hoverBg="bg-[#1877F2]" link="https://www.facebook.com/share/1DKb8HHsGU/?mibextid=wwXIfr" />
                     </div>
@@ -207,6 +208,7 @@ function App() {
             <Route path="/classes/vocals" element={<Vocal />} />
             <Route path="/videos" element={<VideoSection />} />
             <Route path="/*" element={<ErrorPage />} />
+            <Route path="/social" element={<Socials />} />
           </Routes>
         </main>
 
