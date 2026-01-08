@@ -6,7 +6,6 @@ import {
   HiArrowNarrowRight, HiCalendar, HiMusicNote, HiMail
 } from 'react-icons/hi';
 import { IoPersonSharp } from "react-icons/io5";
-import {  HiHome } from "react-icons/hi2";
 
 import { Link } from 'react-router-dom';
 
@@ -133,18 +132,18 @@ export default function Pricing() {
               
 
             </div>
-            <div class="mt-6 max-w-sm mx-auto border-t border-stone-200 pt-4">
-  <ul class="space-y-3 text-sm text-stone-600">
-    <li class="flex items-start gap-3">
-      <span class="text-stone-400">✓</span>
+            <div className="mt-6 max-w-sm mx-auto border-t border-stone-200 pt-4">
+  <ul className="space-y-3 text-sm text-stone-600">
+    <li className="flex items-start gap-3">
+      <span className="text-stone-400">✓</span>
       <span><strong>Personalized Attention:</strong> One-on-one or group sessions.</span>
     </li>
-    <li class="flex items-start gap-3">
-      <span class="text-stone-400">✓</span>
+    <li className="flex items-start gap-3">
+      <span className="text-stone-400">✓</span>
       <span><strong>Flexible Location:</strong> Optional at-home visits available.</span>
     </li>
-    <li class="flex items-start gap-3">
-      <span class="text-stone-400">✓</span>
+    <li className="flex items-start gap-3">
+      <span className="text-stone-400">✓</span>
       <span><strong>Adaptable Timing:</strong> Designed for busy schedules.</span>
     </li>
   </ul>
