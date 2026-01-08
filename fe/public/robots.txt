@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ppaccedemy.gleeze.com/sitemap.xml
+Sitemap: https://pitchandpulseacademy.com/sitemap.xml
