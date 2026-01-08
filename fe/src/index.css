@@ -48,3 +48,18 @@ html {
   /* 4s makes it a slow, elegant sweep. Change to 2s for a faster flash. */
   animation: gold-run 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
+
+@keyframes dash {
+  0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+  50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+  100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  20% { opacity: 1; }
+}
+
+.dot-animation {
+  animation: blink 1.4s infinite both;
+}
