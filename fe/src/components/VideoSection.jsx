@@ -20,76 +20,83 @@ export default function VideoSection() {
   }, [activeVideo]);
 
     const lessons = [
-    { 
+      { 
       id: 1, 
-      title: "Srilankan classes", 
-      videoSrc: "/vid1.mp4", 
-      img: "pi1.png" 
-    },
-    { 
-      id: 2, 
-      title: "Srilankan classes", 
-      videoSrc: "/vid2.mp4", 
-      img: "pi2.png" 
-    },
-    { 
-      id: 3, 
-      title: "Srilankan classes", 
-      videoSrc: "/vid3.mp4", 
-      img: "pi3.png" 
-    },{ 
-      id: 4, 
-      title: "Srilankan classes", 
-      videoSrc: "/vid4.mp4", 
-      img: "pi4.png" 
-    },
-    { 
-      id: 5, 
-      title: "Srilankan classes", 
-      videoSrc: "/vid5.mp4", 
-      img: "pi5.png" 
-    },
-    { 
-      id: 6, 
-      title: "Srilankan classes", 
-      videoSrc: "/vid6.mp4", 
-      img: "pi6.png" 
-    },{ 
-      id: 7, 
       title: "Australian classes", 
       videoSrc: "/vid_n1.mp4", 
       img: "p1.png" 
     },
     { 
-      id: 8, 
+      id: 2, 
       title: "Australian classes", 
       videoSrc: "/vid_n2.mp4", 
       img: "p2.png" 
     },
     { 
-      id: 9, 
+      id: 3, 
       title: "Australian classes", 
       videoSrc: "/vid_n3.mp4", 
       img: "p3.png" 
     },
     { 
-      id: 10, 
+      id: 4, 
       title: "Australian classes", 
       videoSrc: "/vid_n4.mp4", 
       img: "p4.png" 
     },
     { 
-      id: 11, 
+      id: 5, 
       title: "Australian classes", 
       videoSrc: "/vid_n5.mp4", 
       img: "pi7.png" 
     },
     { 
-      id: 12, 
+      id: 6, 
       title: "Australian classes", 
-      videoSrc: "/vid_n5.mp4", 
+      videoSrc: "/vid_n6.mp4", 
       img: "pi8.png" 
     },
+    { 
+      id: 7, 
+      title: "Australian classes", 
+      videoSrc: "/vid_n7.mp4", 
+      img: "pi9.png" 
+    },
+    { 
+      id: 8, 
+      title: "Srilankan classes", 
+      videoSrc: "/vid1.mp4", 
+      img: "pi1.png" 
+    },
+    { 
+      id: 9, 
+      title: "Srilankan classes", 
+      videoSrc: "/vid2.mp4", 
+      img: "pi2.png" 
+    },
+    { 
+      id: 10, 
+      title: "Srilankan classes", 
+      videoSrc: "/vid3.mp4", 
+      img: "pi3.png" 
+    },{ 
+      id: 11, 
+      title: "Srilankan classes", 
+      videoSrc: "/vid4.mp4", 
+      img: "pi4.png" 
+    },
+    { 
+      id: 12, 
+      title: "Srilankan classes", 
+      videoSrc: "/vid5.mp4", 
+      img: "pi5.png" 
+    },
+    { 
+      id: 13, 
+      title: "Srilankan classes", 
+      videoSrc: "/vid6.mp4", 
+      img: "pi6.png" 
+    }
   ];
 
   return (
