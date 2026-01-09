@@ -71,7 +71,7 @@ function App() {
                 {/* MOBILE PADDING: 'pt-80' pushes text down to make room for the logo at the top.
                    DESKTOP PADDING: 'md:pt-10' restores the original spacing.
                 */}
-                <header className="relative px-6 pt-45 md:pt-10 pb-24 max-w-7xl mx-auto text-center">
+                <header className="relative px-6 pt-48 md:pt-10 pb-24 max-w-7xl mx-auto text-center">
                   
                   {/* ADS ONLY ON HOME & MOVES WITH SCROLL */}
                   <SideAdSlider />
